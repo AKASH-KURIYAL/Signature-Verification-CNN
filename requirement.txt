@@ -1,0 +1,7 @@
+flask
+tensorflow
+shutil
+pillow
+pickle
+numpy
+matplotlib
