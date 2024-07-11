@@ -12,7 +12,7 @@ num_individuals = len(os.listdir(real_data_dir))
 batch_size = 32
 epochs = 30
 
-train_real = get_data_generator(real_data_d ir,batch_size = batch_size)
+train_real = get_data_generator(real_data_dir,batch_size = batch_size)
 train_forged = get_data_generator(forge_data_dir,batch_size = batch_size)
 val_real = get_data_generator(real_data_dir, batch_size=batch_size, augment=False)  # No data augmentation
 val_forged = get_data_generator(forge_data_dir, batch_size=batch_size, augment=False)  # No data augmentation

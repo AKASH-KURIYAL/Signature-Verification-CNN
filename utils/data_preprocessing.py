@@ -1,12 +1,12 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 
 def get_data_generator(data_dir,target_size=(128,128),batch_size = 32,augment=True):
     if augment:
+        #Data Augmentation
         datagen = ImageDataGenerator(
-            rescale = 1.0/255,
+            rescale = 1.0/255,  #normalization
             rotation_range = 60,
             width_shift_range = 0.4,
             height_shift_range = 0.4,
@@ -28,6 +28,7 @@ def get_data_generator(data_dir,target_size=(128,128),batch_size = 32,augment=Tr
         class_mode = 'categorical'
     )
     return train_generator  
+
 def preprocess_image(image_path):
     # Load the image
     image = Image.open(image_path).convert('L')  # Convert to grayscale if needed

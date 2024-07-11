@@ -18,7 +18,6 @@ model_path = 'C:/Users/akash/webdev/signature_verification/saved_model/my_model.
 model = tf.keras.models.load_model(model_path)
 
 @app.route('/',methods=['GET','POST'])
-
 def upload_file():
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -44,7 +43,6 @@ def upload_file():
 
 
 
-            prediction = model.predict(image)
 
             real_forged_prob = prediction[0][0][0]
             individual_prob = prediction[1][0]
